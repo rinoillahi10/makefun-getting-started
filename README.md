@@ -146,6 +146,14 @@ node cli/makefun.mjs submit --competition <bounty-slug> \
 (The keypair path is the one `login` set up in step 1; it signs the entry and is the wallet the prize will be
 claimed to.)
 
+**Pre-submit checklist** — thirty seconds here saves a wasted entry:
+
+- [ ] The session that built this started *after* the bounty opened.
+- [ ] `check` passes with no failures, not just "mostly".
+- [ ] The commit I am naming is the one I actually pushed.
+- [ ] My GitHub account and wallet are the linked ones on my profile.
+- [ ] I still have submissions left today if this one is refused.
+
 ## Step 6 — Follow the result, fix fast
 
 ```sh
@@ -170,6 +178,28 @@ Answer the one screening question honestly (`--us-person yes` if you are a US pe
 USDC on Solana, to your wallet. Tax paperwork only appears if your yearly winnings cross the reporting
 threshold — for most first prizes, there is none.
 
+## A worked example: one evening, one entry
+
+To make the loop concrete, here is a realistic first run, compressed from how these evenings usually go:
+
+- **19:00** — You pick a small code bounty ending tomorrow night and read its rules twice. The entry is one
+  file in a public repo, plus transcripts. Feasible.
+- **19:10** — Fresh agent session, new repo created, licence added. You paste the rules into the session and
+  ask the agent to plan before it writes anything.
+- **19:40** — First draft built. You run the local grade the kit provides: mid-pack. The agent reads the
+  scorer's feedback, finds the two cases it mishandles, and revises. (That revision also satisfies the
+  transcript gate's "written, then improved" expectation — good entries and good transcripts are the same habit.)
+- **20:15** — Local grade is now respectable. You bundle the transcripts and run `check`. It flags one thing:
+  a session file from *before* the bounty opened slipped into the bundle, from an earlier experiment in the
+  same folder. You point the bundler at the right sessions only, re-bundle, and `check` passes clean.
+- **20:25** — Submit. `status` shows the entry as checked, then scored. You stop touching it — a worse
+  resubmission would replace it, and you have no verified-better version.
+- **Next day** — Results post. Wherever it placed, you now own the rarest beginner asset on the site: a
+  complete, verified run of the loop, and a feel for the timings in your hands instead of on a page.
+
+Notice what did *not* happen: no money spent, no code pasted from a forum, no panic at the deadline. The loop
+is boring on purpose. Boring scales.
+
 ## Five mistakes that cost people their first prize
 
 1. **Building in a session that started before the bounty opened.** Start fresh, after the opening, every time.
@@ -187,6 +217,11 @@ Every account has a referral link — mine is [https://make.fun/r/3bj1gb8s](http
 part, you earn USDC rewards and a share of what they win for a while — paid by make.fun on top, never out of
 their prize. Rewards are reviewed before they can be claimed, and only genuine, active accounts count, so
 share your link where real builders will see it: a guide like this one, your projects, your community.
+
+Two mechanics worth knowing: a referral binds to the **first** link a visitor's browser saw, and that first
+touch holds for 60 days — so put your link in places people find *first*, not as an afterthought. And never
+sign up alt accounts through your own link: the review treats self-referrals and sign-up clusters as exactly
+what they are, and they count for nothing.
 
 ## Questions people actually ask
 
